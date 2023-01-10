@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.logo-container {
+  height: 200px;
+}
+
+.logo-container img {
+  display: block;
+  margin: auto;
+  width: 293px;
+  height: 200px;
+}
+
+.left-column {
+  float: left;
+  text-align: right;
+  width: 50%;
+}
+
+.right-column {
+  float: left;
+  text-align: left;
+  width: 50%;
+}
+
+.left-column > * {
+  margin-right: 1rem;
+}
+
+.right-column > * {
+  margin-left: 1rem;
+}
+
+.single-column {
+  max-width: 50em;
+  margin: auto;
+  text-align: left;
+}
+
+.navigation-bar {
+  max-width: 293px;
+  float: left;
+  margin-right: 1em;
+  text-align: right;
+}
+
+.vertical-menu {
+  display: inline-block;
+  margin-top: 1em;
+}
+
+.vertical-menu a {
+  display: block;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  border: 2px solid black;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
+.vertical-menu div::before {
+  content: '';
+  background: url('edit.svg') no-repeat 24px;
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.vertical-menu a:hover {
+  background-color: lightgrey;
+}
+
+.vertical-menu .active-item {
+  background-color: tomato;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.thumb {
+  height: 100px;
+  width: 133px;
+}

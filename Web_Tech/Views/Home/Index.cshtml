@@ -1,0 +1,78 @@
+﻿<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALD Russia 2023 / АСО-Россия-2023</title>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+
+<body>
+
+    <div class="logo-container">
+        <img src="~/Images/logo.jpeg" alt="Atomic layer deposition Russia 2023">
+    </div>
+
+    <div class="left-column">
+        <h1>4rd International Workshop<br>‘Atomic Layer Deposition<br>Russia-2023’<br>(ALD Russia 2023)</h1>
+        <p>Makhachkala, Russia<br>18–21 September 2023</p>
+        <div class="vertical-menu">
+            <a href="general-information-en.html">General information</a>
+            <a href="organising-committee-en.html">Organising Committee</a>
+            <a href="sponsors-en.html">Sponsors</a>
+            <a href="venue-dates-and-fees-en.html">Venue, dates and fees</a>
+            <a href="remote-participation-en.html">Remote participation</a>
+            <a href="abstract-submission-and-presentation-en.html">Abstract submission and presentation</a>
+            <a href="publication-of-proceedings-en.html">Publication of proceedings</a>
+            <a href="programme-en.html">Programme</a>
+            <a href="decision-en.html">Decision</a>
+            <a href="photos-en.html">Photos</a>
+            <a href="contacts-en.html">Contacts</a>
+        </div>
+    </div>
+
+    <div lang="ru" class="right-column">
+        <h1>IV Международный семинар<br>«Атомно-слоевое осаждение: <br>Россия-2023»<br>(АСО-Россия-2023)</h1>
+        <p>Махачкала, Россия<br>18–21 сентября 2023 г.</p>
+        <div class="vertical-menu">
+            <a href="general-information-ru.html">Общая информация</a>
+            <a href="organising-committee-ru.html">Организационный комитет</a>
+            <a href="sponsors-ru.html">Спонсоры</a>
+            <a href="venue-dates-and-fees-ru.html">Место проведения, даты и организационный взнос</a>
+            <a href="remote-participation-ru.html">Дистанционное участие</a>
+            <a href="abstract-submission-and-presentation-ru.html">Подача тезисов и представление докладов</a>
+            <a href="publication-of-proceedings-ru.html">Опубликование трудов семинара</a>
+            <a href="programme-ru.html">Программа</a>
+            <a href="decision-ru.html">Решение</a>
+            <a href="photos-ru.html">Фотографии</a>
+            <a href="contacts-ru.html">Контактные данные</a>
+        </div>
+    </div>
+    <div id="Markup">
+        
+@section Scripts
+{
+    <script>
+
+       $( "button" ).click(function() {
+
+                    var sectionId = $(this).data("currentid")
+
+              $.ajax({
+                url: "Home/CreateMarkup",
+                method: "get",
+                data: { id: sectionId },
+                success: function (data) {
+                    $("#Markup").html(data);
+                }
+            });
+
+
+});
+
+    </div>
+
+</body>
+
+</html>

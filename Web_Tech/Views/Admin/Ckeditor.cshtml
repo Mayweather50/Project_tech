@@ -1,0 +1,58 @@
+﻿@model Markup
+
+@{
+    Layout = "~/Views/Shared/_Layots.cshtml";
+    ViewData["Title"] = "Write an article";
+}
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/ckeditor.js"></script>
+<script src="~/ckfinder/ckfinder.js"></script>
+<script src="~/easyimage/plugin.js"></script>
+<script src="~/filebrowser/plugin.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<form action="/Admin/Ckeditor" method="post">
+       <label>NamePage</label>
+    <input type="Text" name="NamePage" class="form-control" />
+    <br />
+    <hr />
+
+    
+    <label>Text</label>
+    <textarea class="form-control" name="Body" id="editorid"></textarea>
+
+    <input type="submit" name="Добавить" value="Добавить" />
+
+</form>
+
+
+@section Scripts{
+    <script src="~/ckeditor.js"></script>
+    <script src="~/ckfinder/ckfinder.js"></script>
+
+    <script src="~/easyimage/plugin.js">
+   </script>
+   <script src="~/filebrowser/plugin.js"></script>
+
+    <script>
+        var editor = CKEDITOR.replace("editorid",{
+            filebrowserBrowseUrl: '/Admin/FIleExplorer',
+            filebrowserUploadUrl: '/Admin/UploadImage'
+        } );
+        CKFinder.setupCKEditor(editor);
+
+
+
+    </script>
+
+
+}
+
+
+
+@*<script>
+    $(document).ready(function () {
+        CKEDITOR.replace('#Description');
+    });
+</script>*@

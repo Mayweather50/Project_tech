@@ -1,0 +1,67 @@
+﻿@using Web_Tech.Models
+@{
+    ViewBag.Title = "Title";
+    Layout = "~/Views/Shared/_Layots.cshtml";
+}
+
+<table class="table">
+     
+    @foreach (var item in Model)
+    {
+          
+
+
+
+
+       <tr><td>@item.NamePage</td>
+            <td>@item.Body</td>
+            <td>
+                <a asp-action="Edit" asp-controller="Admin" asp-route-id="@item.Id">Изменить</a> |
+                <a asp-action="Delete" asp-controller="Admin" asp-route-id="@item.Id">Удалить</a> |
+                <button class="btn btn-link" data-currentid="@item.Id">jfklgnbkfn</button>
+            </td>
+        </tr>
+
+       @* @Html.Raw(item.Body);*@
+    }
+</table>
+
+
+
+
+@section Scripts
+{
+    <script>
+
+       $( "button" ).click(function() {
+
+                    var sectionId = $(this).data("currentid")
+
+              $.ajax({
+                url: "Home/CreateMarkup",
+                method: "get",
+                data: { id: sectionId },
+                success: function (data) {
+                    $("#Markup").html(data);
+                }
+            });
+
+
+});
+
+        //function GetDocuments(id) {
+        //    consol.log(id)
+        //    $.ajax({
+        //        url: "CreateMarkup",
+        //        method: "get",
+        //        data: { sectionId: id },
+        //        success: function (data) {
+        //            $("#Markup").html(data);
+        //        }
+        //    });
+           
+
+       
+    
+   </script>
+        }        
